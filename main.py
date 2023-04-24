@@ -1,16 +1,14 @@
-from typing import Optional
 from fastapi import FastAPI
+from my_api.app.models.base import BaseClass
+from my_api.app.core.config import settings
+from my_api.app.api.api_v1 import api
+from my_api.app.database.session import engine
 import uvicorn
 
+
 app = FastAPI()
-
-@app.get("/")
-async def read_root():
-    return {"Hello":"World"}
-
-@app.get("/items/{item_id}")
-async def read_item(item_id: int, q: Optional[str] = None):
-    return{"item_id": item_id, "q": q}
+app.include_router(api.router, prefix=settings.API_VERSION)
 
 if __name__ =="__main__":
-    uvicorn.run(app)
+    BaseClass.metadata.create_all(bind=engine)
+    uvicorn.run(app, host="0.0.0.0", port=7000)
