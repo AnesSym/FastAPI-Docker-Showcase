@@ -10,5 +10,4 @@ app = FastAPI()
 app.include_router(api.router)
 
 if __name__ =="__main__":
-    BaseClass.metadata.create_all(bind=engine)
     uvicorn.run(app, host="0.0.0.0", port=7000)
