@@ -7,7 +7,7 @@ import uvicorn
 
 
 app = FastAPI()
-app.include_router(api.router, prefix=settings.API_VERSION)
+app.include_router(api.router)
 
 if __name__ =="__main__":
     BaseClass.metadata.create_all(bind=engine)
