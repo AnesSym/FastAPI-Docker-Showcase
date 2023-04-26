@@ -7,7 +7,7 @@
 python pre_start.py
 
 # Run migrations
-alembic upgrade head
+#alembic upgrade head
 
 # Run API
 python main.py
