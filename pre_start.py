@@ -1,4 +1,4 @@
-from my_api.app.database import init_db
+from my_api.app.database.init_db import init_db
 
 if __name__ == "__main__":
     init_db()
