@@ -8,6 +8,6 @@ python pre_start.py
 
 # Run migrations
 alembic upgrade head
-ç
+
 # Run API
 python main.py
