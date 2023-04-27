@@ -10,4 +10,4 @@ app.include_router(api.router)
 
 if __name__ =="__main__":
     #BaseClass.metadata.create_all(bind=engine)
-    uvicorn.run(app, port=8000)
+    uvicorn.run(app, port=7000)

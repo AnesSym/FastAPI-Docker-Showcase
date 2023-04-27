@@ -10,7 +10,7 @@ class Company(BaseClass):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
-    jobs = relationship("Jobs", back_populates="company")
+    #jobs = relationship("Jobs", back_populates="company")
     
 
 class Jobs(BaseClass):
@@ -20,8 +20,8 @@ class Jobs(BaseClass):
     description = Column(String)
     location_id = Column(Integer, ForeignKey("location.id"))
     company_id = Column(Integer, ForeignKey("company.id"))
-    company = relationship("Company", back_populates="jobs")
-    location = relationship("Location", back_populates="jobs")
+    #company = relationship("Company", back_populates="jobs")
+    #location = relationship("Location", back_populates="jobs")
 
 
 
@@ -29,7 +29,7 @@ class Location(BaseClass):
     
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
-    jobs = relationship("Jobs", back_populates="location")
+    #jobs = relationship("Jobs", back_populates="location")
 
     
 

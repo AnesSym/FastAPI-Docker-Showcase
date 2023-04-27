@@ -10,8 +10,9 @@ COPY . /fastapi-app
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8000
+EXPOSE 7000
 
 # Set the default command
 CMD ["python", "main.py"]
+#ENTRYPOINT ["/bin/bash", "prestart.sh"]  
 
